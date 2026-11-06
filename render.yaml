@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: yt-downloader
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # Single worker: job state lives in-memory; threads handle concurrent downloads.
+    # ffmpeg is already available on Render's native Python runtime.
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 300
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"

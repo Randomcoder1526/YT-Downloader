@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — PLAY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3e;
+    --accent: #ff3e6c;
+    --accent2: #7c3aed;
+    --accent3: #06b6d4;
+    --text: #e8e8f0;
+    --muted: #6b7280;
+    --radius: 12px;
+    --glow: 0 0 30px rgba(255,62,108,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    min-height: 100vh;
+    line-height: 1.65;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 48px; position: relative; z-index: 1; }
+  header {
+    padding: 36px 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .logo span { color: var(--text); -webkit-text-fill-color: var(--text); }
+  .nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav a:hover { color: var(--text); border-color: var(--accent2); }
+  .page-head { margin-bottom: 32px; }
+  .kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--accent), #ff8c42);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .lead { color: var(--muted); font-size: 17px; max-width: 52ch; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 28px 26px;
+    margin-bottom: 20px;
+    box-shadow: var(--glow);
+  }
+  .card h2 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .card p, .card li { color: var(--muted); font-size: 15px; }
+  .card p + p { margin-top: 14px; }
+  .card ul { margin: 12px 0 0 1.1em; color: var(--muted); }
+  .card li + li { margin-top: 8px; }
+  footer {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+    margin-bottom: 16px;
+  }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">PLAY<span>.</span></a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/single">Single</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-head">
+    <p class="kicker">Our story</p>
+    <h1>Built for clarity, speed, and <em>control</em></h1>
+    <p class="lead">PLAY is a focused interface for fetching and downloading YouTube playlists and individual videos in formats you choose.</p>
+  </div>
+
+  <article class="card">
+    <h2>What we are</h2>
+    <p>PLAY is a web application that combines a Flask backend with yt-dlp to retrieve metadata and media. The goal is a clean workflow: paste a link, pick MP4 or MP3, and download—without clutter.</p>
+    <p>Playlist mode helps you review a list of videos, select what you need, and run parallel downloads. Single mode streamlines the same pipeline for one URL.</p>
+  </article>
+
+  <article class="card">
+    <h2>How we think about use</h2>
+    <p>We expect you to respect copyright, platform terms, and local law. PLAY is a tool; how you use it is your responsibility. Many creators allow offline access through official apps—when in doubt, prefer those channels.</p>
+  </article>
+
+  <article class="card">
+    <h2>Stack</h2>
+    <ul>
+      <li>Python, Flask, and yt-dlp on the server</li>
+      <li>FFmpeg for audio encoding and container work where needed</li>
+      <li>A minimal, responsive front end—no heavy frameworks required</li>
+    </ul>
+  </article>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+    <p class="footer-copy">PLAY — YouTube Downloader</p>
+  </footer>
+</div>
+</body>
+</html>

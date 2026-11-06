@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disclaimer — PLAY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3e;
+    --accent: #ff3e6c;
+    --accent2: #7c3aed;
+    --accent3: #06b6d4;
+    --text: #e8e8f0;
+    --muted: #6b7280;
+    --warning: rgba(245, 158, 11, 0.15);
+    --radius: 12px;
+    --glow: 0 0 30px rgba(255,62,108,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,58,237,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,58,237,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 48px; position: relative; z-index: 1; }
+  header {
+    padding: 36px 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .logo span { color: var(--text); -webkit-text-fill-color: var(--text); }
+  .nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav a:hover { color: var(--text); border-color: var(--accent2); }
+  .page-head { margin-bottom: 28px; }
+  .kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--accent), #ff8c42);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .updated {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .notice {
+    background: var(--warning);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    color: #fcd34d;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 26px 28px;
+    margin-bottom: 18px;
+    box-shadow: var(--glow);
+  }
+  .card h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+    color: var(--text);
+  }
+  .card p, .card li { color: var(--muted); font-size: 14px; }
+  .card p + p { margin-top: 12px; }
+  .card ul { margin: 10px 0 0 1.15em; }
+  .card li + li { margin-top: 8px; }
+  footer {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+    margin-bottom: 16px;
+  }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="/">PLAY<span>.</span></a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/single">Single</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="page-head">
+    <p class="kicker">Legal</p>
+    <h1>Disclaimer</h1>
+    <p class="updated">Last updated: April 5, 2026</p>
+  </div>
+
+  <p class="notice">PLAY is a technical tool. You are responsible for complying with copyright law, platform terms of service, and regulations that apply where you live.</p>
+
+  <article class="card">
+    <h2>No affiliation</h2>
+    <p>PLAY is not affiliated with, endorsed by, or sponsored by YouTube, Google, or any content platform. All trademarks belong to their respective owners.</p>
+  </article>
+
+  <article class="card">
+    <h2>Acceptable use</h2>
+    <p>Downloading or converting content may be restricted by the rights holder or the platform. Use PLAY only for material you are legally entitled to access and store—such as your own uploads, public-domain works, or cases where you have explicit permission.</p>
+  </article>
+
+  <article class="card">
+    <h2>No warranty</h2>
+    <p>The software is provided “as is,” without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, or non-infringement. Features may break if external sites change their systems.</p>
+  </article>
+
+  <article class="card">
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, the authors and contributors are not liable for any damages or losses arising from use of this software, including indirect or consequential damages.</p>
+  </article>
+
+  <article class="card">
+    <h2>Operator responsibility</h2>
+    <p>If you deploy PLAY for others, you are responsible for your deployment’s security, legality, logging, and compliance obligations. This disclaimer does not replace legal advice.</p>
+  </article>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+    <p class="footer-copy">PLAY — YouTube Downloader</p>
+  </footer>
+</div>
+</body>
+</html>
